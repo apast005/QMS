@@ -1,0 +1,21 @@
+## Organize later
+## List of dependencies Quartus requires
+
+############################################################
+##########                                        ##########
+##########      Quartus required dependencies     ##########
+##########                                        ##########
+############################################################
+
+## Linux 64bit Requirements to run Quartus ##
+
+libxft2:i386 libxext6:i386 libncurses5:i386 lib32ncurses5-dev \
+libzmq3-dev libc6:i386 libstdc++6:i386 unixodbc-dev expat fontconfig \
+xorg-dev glibc-source libxft-dev libxrender-dev libxt-dev libxtst-dev \
+lib32-expat lib32-fontconfig lib32-freetype2 lib32-libpng12 lib32-libice \
+lib32-libsm util-linux ncurses-base tcl-dev tcllib zlib1g-dev \
+lib32-util-linux lib32-ncurses lib32-zlib lib32-libx11 lib32-libxrender \
+lib32-libxt lib32-libxtst libcanberra-dev lib32-glibc lib32-gtk2 \
+lib32-libcanberra lib32-libpng lib32-libxau lib32-libxdmcp lib32-libxext \
+lib32-libxft libpng12-dev libpng12-dev libice-dev libsm-dev libx11-dev \
+libxau-dev libxdmcp-dev libxext-dev

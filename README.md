@@ -22,17 +22,18 @@ Example:  Windows users executing these test benches over Putty
 3.1:  Alternative environment for documentation like Unix “man” pages.
 
 Installation Guides from Intel:
+>> https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/quartus_install.pdf#page=12&zoom=auto,-207,693
+    -- Contains details on setting PATH environments and other useful bits of info
+
 https://fpgasoftware.intel.com/static/quick_start_guide/quick_start_guide_20.1_en.pdf
 https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/quartus_install.pdf
 https://www.intel.com/content/www/us/en/programmable/downloads/software/faq/installation-faq.html?erpm_id=8905536_ts1601556901225#_Toc361418227
 
-############################################################
-##########                                        ##########
-########## Quartus ModelSim required dependencies ##########
-##########                                        ##########
-############################################################
-<<Beginnings of Installation Guide>>
+#########################################
+##<<Beginnings of Installation Guide>> ##
+#########################################
 0/10 Installation Guide Rating: Needs Improvement =D
+
 
 1.) Click me first::: https://fpgasoftware.intel.com/20.1/?edition=lite
 - Selections to make at the top of the web page
@@ -43,58 +44,4 @@ https://www.intel.com/content/www/us/en/programmable/downloads/software/faq/inst
 - Choose 'Individual Files' tab and download
     --Quartus Prime (includes Nios II EDS)
     --ModelSim-Intel FPGA Edition (includes Starter Edition)
-
-
-
-
-
-# Use 'sudo apt-get install -y' to install required dependencies (libs)
-libxft2:i386
-libxext6:i386
-libncurses5:i386
-lib32ncurses5-dev
-libzmq3-dev
-libc6:i386
-libstdc++6:i386
-unixodbc-dev
-expat fontconfig
-xorg-dev
-glibc-source
-libxft-dev
-libxrender-dev
-libxt-dev
-libxtst-dev
-lib32-expat
-lib32-fontconfig
-lib32-freetype2
-lib32-libpng12
-lib32-libice
-lib32-libsm
-util-linux
-ncurses-base
-tcl-dev tcllib
-zlib1g-dev
-lib32-util-linux
-lib32-ncurses
-lib32-zlib
-lib32-libx11
-lib32-libxrender
-lib32-libxt
-lib32-libxtst
-libcanberra-dev
-lib32-glibc
-lib32-gtk2
-lib32-libcanberra
-lib32-libpng
-lib32-libxau
-lib32-libxdmcp
-lib32-libxext
-lib32-libxft
-libpng12-dev
-libpng12-dev
-libice-dev
-libsm-dev
-libx11-dev
-libxau-dev
-libxdmcp-dev
-libxext-dev
+## FIXME: Include information about installation process/options ##

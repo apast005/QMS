@@ -2,15 +2,19 @@
 # Dependencies/32bitLibraries/BuildEssentials Prep
 #####################################################################
 
-# Main Variables
+## Function Paths
+. ./install_Quartus.sh
+. ./install_ModelSim.sh
+
+## Main Variables
 WGet_FILE=/usr/bin/wget
 
-# Prepare Basics
+## Prepare Basics
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt-get install build-essentials -y
 
-# WGET check and install/update
+## WGET check and install/update
 if [ -f "$WGet_FILE" ]; then
     echo "$WGet_FILE is ready to go!"
 else
@@ -21,3 +25,19 @@ else
     echo -e "\e[32m[OK]  wget	 ...  \e[0m"
 fi
 #####################################################################
+
+
+
+# Quartus Installation Functions #
+
+    # Quartus Fucntions TOADD
+
+# ModelSim Installation Functions #
+
+    # ModelSim Functions TOADD
+
+
+# End of QMS Installation Portion
+
+# Next part is to script various Verilog files and link
+# them together using their dependancies as a reference pointer

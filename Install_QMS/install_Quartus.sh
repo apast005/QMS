@@ -8,28 +8,33 @@
 
 ## Quartus Variables
 Quartus_HTTP_Address="https://drive.google.com/file/d/1MPneVcHZWHRd8dqTe-YS5HYSYVt1y6tD/view?usp=sharing"
-Quartus_dir_name="Quartus-lite-20"
+Quartus_dir_name="Quartus-lite-20.1"
 Quartus_file_name="QuartusLiteSetup-20.1.0.711-linux.run"
 Quartus_version="Quartus-lite-20.1.0.711-linux"
 Quartus_settings_location="/etc/profile.d/quartus_settings.sh"
 
-# Input is fed from QMS_dep_input file
-sudo apt-get install -y < QMS_dep_input
-mkdir "$Quar_dir_name"
+# echo warning that GUI installer will occur after download
+    echo -e "\a GUI Installer will assist after accept.\n"
+if whiptail --yesno "Begin Quartus Install?" 20 60 ;then
 
-# Download/Extract Quartus
-echo -e "\e[33mInstalling Downloading/Extracting Quartus	...\e[0m"
-curl "$Quartus_HTTP_Address" | tar -xz "$Quartus_file_name "-C "$Quar_dir_name"
-echo -e "\e[32m[OK]  Quartus Extracted to $Quartus_dir_name	 ...  \e[0m"
+    # Installing Quartus dependencies
+    sudo apt-get install -y < Quar_input
+    mkdir "$Quar_dir_name"
 
-cd "$Quartus_dir_name"
-echo -e  "\n Set installation directory to /opt/altera/20.1 \n"
-echo '[Press any key to continue]'
-read -n 1 keypress
-sudo ./setup.sh
+    # Download Quartus .run file
+    echo -e "\e[33mDownloading Quartus	...\e[0m"
+    wget "$Quartus_HTTP_Address" --progress=dot
+    echo -e "\e[32m[OK] Quartus Installer Starting	 ...  \e[0m"
 
-# Clean
-cd ..; sudo rm -rf "$Quartus_dir_name"
+    # Quartus Installer GUI
+    sudo ./setup.sh
+
+else
+    echo Exiting Terminal...
+    exit 1
+fi
+
+
 
 # Settings for Quartus
 sudo touch "$Quartus_settings_location"
