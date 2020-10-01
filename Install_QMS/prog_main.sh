@@ -1,16 +1,23 @@
-# Main with progress bar
+#####################################################################
+# Dependencies/32bitLibraries/BuildEssentials Prep
+#####################################################################
 
-# Liked the idea of using process Id
-# Implement later
-#/usr/bin/scp me@website.com:file somewhere 2>/dev/null &
-#pid=$! # Process Id of the previous running command
+# Main Variables
+WGet_FILE=/usr/bin/wget
 
-#spin='-\|/'
+# Prepare Basics
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt-get install build-essentials -y
 
-#i=0
-#while kill -0 $pid 2>/dev/null
-#do
-#  i=$(( (i+1) %4 ))
-#  printf "\r${spin:$i:1}"
-#  sleep .1
-#done
+# WGET check and install/update
+if [ -f "$WGet_FILE" ]; then
+    echo "$WGet_FILE is ready to go!"
+else
+    echo "$WGet_FILE will be downloaded."
+    # wget install
+    echo -e "\e[33mInstalling wget	...\e[0m"
+    sudo apt-get install wget -y
+    echo -e "\e[32m[OK]  wget	 ...  \e[0m"
+fi
+#####################################################################
