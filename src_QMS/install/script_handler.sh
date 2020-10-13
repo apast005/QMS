@@ -42,4 +42,4 @@ fi
 # End of QMS Installation Portion
 
 # Next part is to script various Verilog files and link
-# them together using their dependancies as a reference pointer
+# them together using their dependencies as a reference pointer
