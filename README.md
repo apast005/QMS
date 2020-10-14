@@ -129,7 +129,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
           * Example:  Windows users executing these test benches over Putty
 
 2. Automate component integration/testing
-- [ ] Automate this process through scripts that could process these dependency files and check if dependencies have been installed
+- [X] Automate this process through scripts that could process these dependency files and check if dependencies have been installed
 - [ ] Test benches for components should be automatically executed upon installation to validate a working component.
 
 3. Documentation is in PDF table that specifies the module name, dependencies, inputs, outputs, and an English description of the component.  
