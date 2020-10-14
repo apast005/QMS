@@ -19,13 +19,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/apast005/QMS">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://avatars3.githubusercontent.com/u/69246622?s=460&u=db1d7a32b0de4373c355352638a3e7cad9ffa97c&v=4" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">YOUR_TITLE</h3>
+  <h3 align="center">FIUCIS-CDA UNIX Student Project</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
+    UNIX project to automate Quartus and ModelSim operations through shell scripting
     <br />
     <a href="https://github.com/apast005/QMS"><strong>Explore the docs »</strong></a>
     <br />
