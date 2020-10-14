@@ -123,7 +123,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 1. Increase Usability      
-- [ ] Download the appropriate components from GitHub and produce useful messages and/or log files for users as appropriate.  
+- [X] Download the appropriate components from GitHub and produce useful messages and/or log files for users as appropriate.  
 - [ ] Outputs of these test benches also should be displayed in the terminal or into log files in ways that make sense
 - [ ] A user should be able to turn interactive mode on or off (for
           * Example:  Windows users executing these test benches over Putty
