@@ -198,14 +198,14 @@ Project Link: [https://github.com/apast005/QMS](https://github.com/apast005/QMS)
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/apast005/QMS.svg?style=flat-square
 [contributors-url]: https://github.com/apast005/QMS/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/apast005/repo.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/apast005/QMS.svg?style=flat-square
 [forks-url]: https://github.com/apast005/QMS/network/members
-[stars-shield]: https://img.shields.io/github/stars/apast005/repo.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/apast005/QMS.svg?style=flat-square
 [stars-url]: https://github.com/apast005/QMS/stargazers
-[issues-shield]: https://img.shields.io/github/issues/apast005/repo.svg?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/apast005/QMS.svg?style=flat-square
 [issues-url]: https://github.com/apast005/QMS/issues
-[license-shield]: https://img.shields.io/github/license/apast005/repo.svg?style=flat-square
+[license-shield]: https://img.shields.io/github/license/apast005/QMS.svg?style=flat-square
 [license-url]: https://github.com/apast005/QMS/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-blue.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/alexander-pastoriza
 [product-screenshot]: images/screenshot.png
