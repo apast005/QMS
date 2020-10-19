@@ -19,6 +19,12 @@ repo_url_pg2="https://github.com/FIUSCIS-CDA?after=Y3Vyc29yOnYyOpK5MjAyMC0wOC0yM
 # Collect Page Source from repo Urls
 # Parse order: html file > text file > lean text file grep > awk the Repo names
 curl $repo_url_pg1 > tmp && curl $repo_url_pg2 >> tmp
-html2text tmp tmp1
+html2text tmp > tmp1
 grep -e '    \* \*\*\*\* *' tmp1 > tmp
-awk '$1=$1' tmp > Repo_Names
+sed 's/*//g' tmp > tmp1
+awk '$1=$1' tmp1 > Repo_Names
+
+# Clean Temp files
+## FIXME Add Repo_Names file to be cleaned after testing is complete
+## FIXME2 to more secure clean command
+rm tmp*
