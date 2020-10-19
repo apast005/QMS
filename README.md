@@ -19,13 +19,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/apast005/QMS">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://avatars3.githubusercontent.com/u/69246622?s=460&u=db1d7a32b0de4373c355352638a3e7cad9ffa97c&v=4" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">YOUR_TITLE</h3>
+  <h3 align="center">FIUCIS-CDA UNIX Student Project</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
+    UNIX project to automate Quartus and ModelSim operations through shell scripting
     <br />
     <a href="https://github.com/apast005/QMS"><strong>Explore the docs »</strong></a>
     <br />
@@ -123,17 +123,17 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 1. Increase Usability      
--[ ] Download the appropriate components from GitHub and produce useful messages and/or log files for users as appropriate.  
--[ ] Outputs of these test benches also should be displayed in the terminal or into log files in ways that make sense
--[ ] A user should be able to turn interactive mode on or off (for
-* Example:  Windows users executing these test benches over Putty
+    - [X] Download the appropriate components from GitHub and produce useful messages and/or log files for users as appropriate.  
+    - [ ] Outputs of these test benches also should be displayed in the terminal or into log files in ways that make sense
+    - [ ] A user should be able to turn interactive mode on or off (for
+              * Example:  Windows users executing these test benches over Putty
 
 2. Automate component integration/testing
--[ ] Automate this process through scripts that could process these dependency files and check if dependencies have been installed
--[ ] Test benches for components should be automatically executed upon installation to validate a working component.
+    - [X] Automate this process through scripts that could process these dependency files and check if dependencies have been installed
+    - [ ] Test benches for components should be automatically executed upon installation to validate a working component.
 
 3. Documentation is in PDF table that specifies the module name, dependencies, inputs, outputs, and an English description of the component.  
--[ ] Alternative environment for documentation like Unix “man” pages.
+    - [ ] Alternative environment for documentation like Unix “man” pages.
 
 4. See the [open issues](https://github.com/apast005/QMS/issues) for a list of proposed features (and known issues).
 
@@ -196,16 +196,16 @@ Project Link: [https://github.com/apast005/QMS](https://github.com/apast005/QMS)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/apast005/repo.svg?style=flat-square
-[contributors-url]: https://github.com/apast005/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/apast005/repo.svg?style=flat-square
-[forks-url]: https://github.com/apast005/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/apast005/repo.svg?style=flat-square
-[stars-url]: https://github.com/apast005/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/apast005/repo.svg?style=flat-square
-[issues-url]: https://github.com/apast005/repo/issues
-[license-shield]: https://img.shields.io/github/license/apast005/repo.svg?style=flat-square
-[license-url]: https://github.com/apast005/repo/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[contributors-shield]: https://img.shields.io/github/contributors/apast005/QMS.svg?style=flat-square
+[contributors-url]: https://github.com/apast005/QMS/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/apast005/QMS.svg?style=flat-square
+[forks-url]: https://github.com/apast005/QMS/network/members
+[stars-shield]: https://img.shields.io/github/stars/apast005/QMS.svg?style=flat-square
+[stars-url]: https://github.com/apast005/QMS/stargazers
+[issues-shield]: https://img.shields.io/github/issues/apast005/QMS.svg?style=flat-square
+[issues-url]: https://github.com/apast005/QMS/issues
+[license-shield]: https://img.shields.io/github/license/apast005/QMS.svg?style=flat-square
+[license-url]: https://github.com/apast005/QMS/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-blue.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/alexander-pastoriza
 [product-screenshot]: images/screenshot.png
