@@ -49,13 +49,13 @@ git clone "https://github.com/FIUSCIS-CDA/$hardware_repo.git"
 cd "$hardware_repo/"
 
 # Initial delimitter to output string in third index when / is encountered
-awk -F/ '{print $3}' "$hardware_repo.qsf" >tmp.txt
+awk -F/ '{print $3}' "$hardware_repo.qsf" > tmp.txt
 
 # Clean tmp.txt of excess newlines and remove strings that don't end in .bdf
-grep -e ".*\.bdf" tmp.txt >tmp1.txt
+grep -e ".*\.bdf" tmp.txt > tmp1.txt
 
 # Final pass through tmp.txt to to trim .bdf extension from lines
-sed 's/.bdf//g' tmp1.txt >tmp.txt
+sed 's/.bdf//g' tmp1.txt > tmp.txt
 
 # Read tmp.txt using each line as a parameter in git clone
 while IFS= read -r dependencies; do
@@ -63,7 +63,7 @@ while IFS= read -r dependencies; do
 	# FIXME add user confirmation to proceed and warning if no
 	# Clone necessary dependencies
 	git clone "https://github.com/FIUSCIS-CDA/$dependencies.git"
-done <tmp.txt
+done < tmp.txt
 
 ## TODO: Go over each cloned hardware dependency to download their dependencies
-## Thinking of organizing each task into seperate functions to be called recursively 
+## Thinking of organizing each task into seperate functions to be called recursively
