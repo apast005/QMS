@@ -1086,7 +1086,7 @@ Computes A + B, where A and B are 32-bit values.  Stores result in 32-bit
 value S.
 .
 .SH BUGS
-Working on recursive dependency download for hardware. 
+Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
 .SH "SEE ALSO"

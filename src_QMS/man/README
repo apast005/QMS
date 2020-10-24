@@ -1,5 +1,5 @@
 command to process man page
-groff -man -Tascii -tbl cdamods.7
+groff -man -Tascii -tbl cdamods.7.man
 
 ## Man directory descriptions
 1
