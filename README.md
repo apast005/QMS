@@ -133,7 +133,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] Test benches for components should be automatically executed upon installation to validate a working component.
 
 3. Documentation is in PDF table that specifies the module name, dependencies, inputs, outputs, and an English description of the component.  
-    - [ ] Alternative environment for documentation like Unix “man” pages.
+    - [X] Alternative environment for documentation like Unix “man” pages.
 
 4. See the [open issues](https://github.com/apast005/QMS/issues) for a list of proposed features (and known issues).
 
