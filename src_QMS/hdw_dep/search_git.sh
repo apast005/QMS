@@ -55,15 +55,19 @@ awk -F/ '{print $3}' "$hardware_repo.qsf" > tmp.txt
 grep -e ".*\.bdf" tmp.txt > tmp1.txt
 
 # Final pass through tmp.txt to to trim .bdf extension from lines
-sed 's/.bdf//g' tmp1.txt > tmp.txt
+sed 's/.bdf/,/g' tmp1.txt > tmp.txt
+
+## Delete after adding dependencies to cdamods.7
+cd $PWD/$hardware_repo
 
 # Read tmp.txt using each line as a parameter in git clone
-while IFS= read -r dependencies; do
-	echo "List of dependencies required: $dependencies"
+#while IFS= read -r dependencies; do
+#	echo -n "List of dependencies required: "
+#	echo "$dependencies"
 	# FIXME add user confirmation to proceed and warning if no
 	# Clone necessary dependencies
-	git clone "https://github.com/FIUSCIS-CDA/$dependencies.git"
-done < tmp.txt
+	#git clone "https://github.com/FIUSCIS-CDA/$dependencies.git"
+#done #< tmp.txt
 
 ## TODO: Go over each cloned hardware dependency to download their dependencies
 ## Thinking of organizing each task into seperate functions to be called recursively

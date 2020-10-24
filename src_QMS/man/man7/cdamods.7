@@ -2,8 +2,36 @@
 .SH MODULE NAME
 CPU_SingleCycle
 .SH DEPENDENCIES
-.B To be added
 .I
+SE18_32,
+SPLICE_SL2,
+MUX2_5,
+MUX2_32,
+SE16_32,
+SameBit,
+MUX2,
+Flopr_32,
+MUX3_32,
+INC4_32,
+SPLICE_PCJ,
+Adder_32,
+OneBitAdder,
+MUX3,
+Flopr,
+DSwitch,
+CTRL,
+ALU32,
+RF,
+Flopenr_32,
+MUX32_32,
+MUX32,
+Decoder_32,
+Flopenr,
+DESwitch,
+ALUBit31,
+ALUBits0To30,
+MUX4
+.
 .SH INPUTS
 .TS
 tab(;) allbox;
@@ -21,8 +49,12 @@ Single-cycle MIPS CPU
 .SH MODULE NAME
 ALU32
 .SH DEPENDENCIES
-.B To be added
 .I
+MUX2,
+MUX4,
+SameBit,
+OneBitAdder
+.
 .SH INPUTS
 .TS
 tab(;) allbox;
@@ -63,11 +95,998 @@ Ainvert;Binvert;CarryIn;Op1;Op0;Result
 1;1;0;0;0;!(A | B)
 .TE
 .
+.SH MODULE NAME
+RF
+.SH DEPENDENCIES
+.I
+Flopenr_32,
+Flopenr,
+DSwitch,
+MUX32_32,
+MUX32,
+Decoder_32
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+clk;1
+reset;1
+we;1
+r1a;5
+r2a;5
+wa;5
+wd;32
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+r1d;32
+r2d;32
+.TE
+.SH DESCRIPTION
+.sp
+MIPS register file, containing all 32-bit MIPS registers
+.sp
+When reset = 1, all registers are set to zero
+.sp
+Otherwise:
+  -r1d is set to the contents of register #r1a
+  -r2d is set to the contents of register #r2a
+  -if (we == 1), set register #wa equal to wd
+.
+.SH MODULE NAME
+MUX32
+.SH DEPENDENCIES
+.I
+Decoder_32,
+MUX2
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+I5;1
+I6;1
+I7;1
+I8;1
+I9;1
+I10;1
+I11;1
+I12;1
+I13;1
+I14;1
+I15;1
+I16;1
+I17;1
+I18;1
+I19;1
+I20;1
+I21;1
+I22;1
+I23;1
+I24;1
+I25;1
+I26;1
+I27;1
+I28;1
+I29;1
+I30;1
+I31;1
+S;5
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;1
+.TE
+.SH DESCRIPTION
+32-input multiplexor with one-bit inputs.  S is a five-bit value (0 to 31).
+Output Y is set to input number designated by S (0 to 31).
+.
+.SH MODULE NAME
+MUX32_32
+.SH DEPENDENCIES
+.I
+Decoder_32,
+MUX2,
+MUX32
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+I0;32
+I1;32
+I2;32
+I3;32
+I4;32
+I5;32
+I6;32
+I7;32
+I8;32
+I9;32
+I10;32
+I11;32
+I12;32
+I13;32
+I14;32
+I15;32
+I16;32
+I17;32
+I18;32
+I19;32
+I20;32
+I21;32
+I22;32
+I23;32
+I24;32
+I25;32
+I26;32
+I27;32
+I28;32
+I29;32
+I30;32
+I31;32
+S;5
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;32
+.TE
+.SH DESCRIPTION
+32-input multiplexor with 32-bit inputs.  S is a five-bit value (0 to 31).
+Output Y is set to input number designated by S (0 to 31).
+.
+.SH MODULE NAME
+DSwitch
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+reset;1
+clk;1
+D;1
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Q;1
+.TE
+.SH DESCRIPTION
+A one-bit switch.
+.
+.SH MODULE NAME
+SL2_32
+.SH DEPENDENCIES
+.I
+SameBit
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;32
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;32
+.TE
+.SH DESCRIPTION
+Takes a 32-bit input A, and shifts it left by 2.
+Works for Two's Compliment values.
+.
+.SH MODULE NAME
+MUX4_32
+.SH DEPENDENCIES
+.I
+MUX4
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;32
+B;32
+C;32
+D;32
+S;2
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;32
+.TE
+.SH DESCRIPTION
+Four-input multiplexor with 32-bit inputs.  Sets output Y equal to:
+.sp
+A if S = 00
+.sp
+B if S = 01
+.sp
+C if S = 10
+.sp
+D if S = 11
+.
+.SH MODULE NAME
+MUX3_32
+.SH DEPENDENCIES
+.I
+MUX3
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;32
+B;32
+C;32
+S;2
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;32
+.TE
+.SH DESCRIPTION
+Three-input multiplexor with 32-bit inputs.  Sets output Y equal to:
+.sp
+A if S = 00
+.sp
+B if S = 01
+.sp
+C if S = 10
+.
+.SH MODULE NAME
+INC4
+.SH DEPENDENCIES
+.I
+MUX4
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A[3];1
+A[2];1
+A[1];1
+A[0];1
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+S[3];1
+S[2];1
+S[1];1
+S[0];1
+.TE
+.SH DESCRIPTION
+Takes a 4-bit input A (bits are wired into separate inputs), and generates a
+four-bit output S = A + 1 (bits are wired into separate outputs).
+.
+.SH MODULE NAME
+Four
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c.
+Y
+.TE
+.SH DESCRIPTION
+Outputs Y = 4 (32 bits).
+.
+.SH MODULE NAME
+CPU_MultiCycle
+.SH DEPENDENCIES
+.I
+SameBit,
+MUX2,
+Flopr_32,
+Flopenr_32,
+Flopr,
+DSwitch,
+MUX2_5,
+MUX2_32,
+Four,
+SE16_32,
+SL2_32,
+RF,
+Flopenr,
+DESwitch,
+MUX4_32,
+MUX3_32,
+MUX32_32,
+MUX32,
+Decoder_32,
+MUX4,
+MUX3,
+ALU32,
+SPLICE_PCJ,
+ALUBit31,
+ALUBits0To30,
+OneBitAdder,
+INC4
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+clk;1
+reset;1
+.TE
+.SH OUTPUTS
+.SH DESCRIPTION
+Multi-Cycle MIPS CPU
+.sp
+CTRL operates with an FSM that includes a four-bit state (bits NS3, NS2, NS1
+and NS0) and micro-instructions implemented in a MicroROM.  Mapping from ALUOp
+bits to ALU inputs is done by ALUCtl.
+.
+.SH MODULE NAME
+DM
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+a;32
+wd;32
+we;1
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+rd;32
+.TE
+.SH DESCRIPTION
+Random access data memory. rd = contents os address a.  Value at address a is
+set to wd if we is equal to 1.
+.
+.SH MODULE NAME
+Flopenr
+.SH DEPENDENCIES
+.I
+DESwitch,
+DSwitch
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+clk;1
+reset;1
+D;1
+E;1
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Q;1
+.TE
+.SH DESCRIPTION
+A one-bit enabled register, implemented with two switches (one unenabled, one
+enabled)
+.
+.SH MODULE NAME
+DESwitch
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+reset;1
+clk;1
+D;1
+E;1
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Q;1
+.TE
+.SH DESCRIPTION
+A one-bit enabled switch.
+.
+.SH MODULE NAME
+SPLICE_SL2
+.SH DEPENDENCIES
+.I
+SameBit
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;16
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;18
+.TE
+.SH DESCRIPTION
+Shifts a 16-bit input A left by two slots, producing an 18-bit output
+Y = A * 4.
+.
+.SH MODULE NAME
+SPLICE_PCJ
+.SH DEPENDENCIES
+.I
+SameBit
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+ir25_0;26
+pc31_28;4
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;32
+.TE
+.SH DESCRIPTION
+Splices together, in the following order: pc31_28, followed by ir25_0,
+followed by two zeroes.  Useful for computing the target of a MIPS
+jump instruction.
+.
+.SH MODULE NAME
+SE18_32
+.SH DEPENDENCIES
+.I
+SameBit
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;18
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;32
+.TE
+.SH DESCRIPTION
+Takes an 18-bit input A, and outputs the A as a 32-bit value into Y.
+Works for Two's Complement values.
+.
+.SH MODULE NAME
+SE16_32
+.SH DEPENDENCIES
+.I
+SameBit
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;16
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;32
+.TE
+.SH DESCRIPTION
+Takes an 16-bit input A, and outputs the A as a 32-bit value into Y.
+Works for Two's Complement values.
+.
+.SH MODULE NAME
+SameBit
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;1
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;1
+.TE
+.SH DESCRIPTION
+Takes a single-bit input A, and outputs the same bit into Y.
+This is useful in Quartus when you need two different names for the same wire,
+which is not allowed.
+.
+.SH MODULE NAME
+MUX4
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;1
+B;1
+C;1
+D;1
+S;2
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;1
+.TE
+.SH DESCRIPTION
+Four-input multiplexor with one-bit inputs.  Sets output Y equal to:
+.sp
+A if S = 00,
+.sp
+B if S = 01,
+.sp
+C if S = 10,
+.sp
+D if S = 11.
+.
+.SH MODULE NAME
+MUX3
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;1
+B;1
+C;1
+S;2
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;1
+.TE
+.SH DESCRIPTION
+Three-input multiplexor with one-bit inputs.  Sets output Y equal to:
+.sp
+A if S = 00,
+.sp
+B if S = 01,
+.sp
+C if S = 10.
+.
+.SH MODULE NAME
+MUX2_5
+.SH DEPENDENCIES
+.I
+MUX2
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+S;1
+A;5
+B;5
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;5
+.TE
+.SH DESCRIPTION
+Two-input multiplexor with five-bit inputs.  Sets output Y equal to:
+.sp
+A if S = 0,
+.sp
+B if S = 1.
+.
+.SH MODULE NAME
+MUX2_32
+.SH DEPENDENCIES
+.I
+MUX2
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+S;1
+A;32
+B;32
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;32
+.TE
+.SH DESCRIPTION
+Two-input multiplexor with 32-bit inputs.  Sets output Y equal to:
+.sp
+A if S = 0,
+.sp
+B if S = 1.
+.
+.SH MODULE NAME
+MUX2
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;1
+B;1
+S;1
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;1
+.TE
+.SH DESCRIPTION
+Two-input multiplexor with one-bit inputs.  Sets output Y equal to:
+.sp
+A if S = 0,
+.sp
+B if S = 1.
+.
+.SH MODULE NAME
+INC4_32
+.SH DEPENDENCIES
+.I
+Adder_32,
+OneBitAdder
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;32
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+S;32
+.TE
+.SH DESCRIPTION
+Computes A + 4, where A is a 32-bit value.  Stores result in a 32-bit value S.
+.
+.SH MODULE NAME
+Flopr_32
+.SH DEPENDENCIES
+.I
+Flopr,
+DSwitch
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+clk;1
+reset;1
+D;32
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Q;32
+.TE
+.SH DESCRIPTION
+A 32-bit register.
+.
+.SH MODULE NAME
+Flopr
+.SH DEPENDENCIES
+.I
+DSwitch
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+reset;1
+clk;1
+D;1
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Q;1
+.TE
+.SH DESCRIPTION
+A one-bit register, implemented with two switches.
+.
+.SH MODULE NAME
+Flopenr_32
+.SH DEPENDENCIES
+.I
+Flopenr,
+DESwitch,
+DSwitch
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+clk;1
+reset;1
+E;1
+D;32
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Q;32
+.TE
+.SH DESCRIPTION
+A 32-bit enabled register.
+.
+.SH MODULE NAME
+Decoder_32
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;5
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Q0;1
+Q1;1
+Q2;1
+Q3;1
+Q4;1
+Q5;1
+Q6;1
+Q7;1
+Q8;1
+Q9;1
+Q10;1
+Q11;1
+Q12;1
+Q13;1
+Q14;1
+Q15;1
+Q16;1
+Q17;1
+Q18;1
+Q19;1
+Q20;1
+Q21;1
+Q22;1
+Q23;1
+Q24;1
+Q25;1
+Q26;1
+Q27;1
+Q28;1
+Q29;1
+Q30;1
+Q31;1
+.TE
+.SH DESCRIPTION
+Takes a 5-bit input A (unsigned from 0 to 31).  Set the appropriate Q bit
+(0 to 31) to 1.
+.
+.SH MODULE NAME
+CTRL
+.SH DEPENDENCIES
+.I
+SameBit
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+eq;1
+ir31_26;6
+ir5_0;6
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+rf_we;1
+add2_s;1
+rf_wd_s;1
+dm_we;1
+rf_wa_s;1
+alu_op;5
+pc_s;2
+.TE
+.SH DESCRIPTION
+Single cycle MIPS control unit.
+.
+.SH MODULE NAME
+OneBitAdder
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Ci;1
+A;1
+B;1
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Co;1
+S;1
+.TE
+.SH DESCRIPTION
+Computes Ci + A + B.  Stores two-bit result in Co and S;  Co is the first bit
+and S is the second.
+.
+.SH MODULE NAME
+IM
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+a;32
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+d;32
+.TE
+.SH DESCRIPTION
+Read-only instruction memory. d = contents of address a.
+.
+.SH MODULE NAME
+Adder_32
+.SH DEPENDENCIES
+.I
+OneBitAdder
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;32
+B;32
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+S;32
+.TE
+.SH DESCRIPTION
+Computes A + B, where A and B are 32-bit values.  Stores result in 32-bit
+value S.
+.
 .SH BUGS
-Does not recursively download all module dependencies.  Currently the only
-dependencies that are downloaded are the ones listed under each module.
-Will add fix to compile a list of all necessary downloads upon project
-finalization.  Need to add all dependencies to modules.
+Working on recursive dependency download for hardware. 
 .SH AUTHOR
 Alexander T Pastoriza
 .SH "SEE ALSO"

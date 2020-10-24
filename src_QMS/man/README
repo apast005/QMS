@@ -1,5 +1,5 @@
 command to process man page
-groff -man -Tascii cdamods.7
+groff -man -Tascii -tbl cdamods.7
 
 ## Man directory descriptions
 1
@@ -24,38 +24,6 @@ groff -man -Tascii cdamods.7
     Kernel internals.
 
 ## List of Modules that need to be added to CDAMODS man page ##
-RF
-Unix
-MUX32
-MUX32_32
-DSwitch
-SL2_32
-MUX4_32
-MUX3_32
-INC4
-Four
-CPU_MultiCycle
-DM
-QMTest
-Flopenr
-DESwitch
-SPLICE_SL2
-SPLICE_PCJ
-SE18_32
-SE16_32
-SameBit
-MUX4
-MUX3
-MUX2_5
-MUX2_32
-MUX2
-INC4_32
-Flopr_32
-Flopr
-Flopenr_32
-Decoder_32
-CTRL
-OneBitAdder
-IM
-Adder_32
+
 CPU_Pipelined
+  > No pdf in repository.  Make one?

@@ -187,7 +187,7 @@ Project Link: [https://github.com/apast005/QMS](https://github.com/apast005/QMS)
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 * [Template for README](https://github.com/othneildrew/Best-README-Template/blob/master/BLANK_README.md)
-* []()
+* [Jens Schweikhardt How To](https://tldp.org/HOWTO/Man-Page/q3.html)
 * []()
 
 
