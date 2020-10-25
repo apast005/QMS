@@ -48,6 +48,7 @@ git clone "https://github.com/FIUSCIS-CDA/$hardware_repo.git"
 # Move to newly downloaded directory
 cd "$hardware_repo/"
 
+## FIXME: add traps for signals 1, 2, 15 and clean tmp files used in script
 # Initial delimitter to output string in third index when / is encountered
 awk -F/ '{print $3}' "$hardware_repo.qsf" > tmp.txt
 
@@ -57,11 +58,10 @@ grep -e ".*\.bdf" tmp.txt > tmp1.txt
 # Final pass through tmp.txt to to trim .bdf extension from lines
 sed 's/.bdf//g' tmp1.txt > tmp.txt
 
-
+## FIXME: add traps for signals 1, 2, 15 and clean tmp files used in script
 # Read tmp.txt using each line as a parameter in git clone
 while IFS= read -r dependencies; do
-	echo -n "List of dependencies required: "
-	echo "$dependencies"
+	echo -n "Dependency currently cloning: $dependencies"
 	 #FIXME add user confirmation to proceed and warning if no
 	 #Clone necessary dependencies
 	git clone "https://github.com/FIUSCIS-CDA/$dependencies.git"
