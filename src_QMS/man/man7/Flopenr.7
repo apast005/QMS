@@ -1,0 +1,36 @@
+.TH Flopenr 7 "October 2020" Linux "FIUCIS-CDA Hardware Manual"
+.SH MODULE NAME
+Flopenr
+.SH DEPENDENCIES
+.I
+DESwitch,
+DSwitch
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+clk;1
+reset;1
+D;1
+E;1
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Q;1
+.TE
+.SH DESCRIPTION
+A one-bit enabled register, implemented with two switches (one unenabled, one
+enabled)
+.
+.SH BUGS
+Working on recursive dependency download for hardware.
+.SH AUTHOR
+Alexander T Pastoriza
+.SH "SEE ALSO"
+.BR qms (1),
+.BR modclone (1)

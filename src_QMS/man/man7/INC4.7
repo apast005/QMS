@@ -1,0 +1,38 @@
+.TH INC4 7 "October 2020" Linux "FIUCIS-CDA Hardware Manual"
+.SH MODULE NAME
+INC4
+.SH DEPENDENCIES
+.I
+MUX4
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A[3];1
+A[2];1
+A[1];1
+A[0];1
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+S[3];1
+S[2];1
+S[1];1
+S[0];1
+.TE
+.SH DESCRIPTION
+Takes a 4-bit input A (bits are wired into separate inputs), and generates a
+four-bit output S = A + 1 (bits are wired into separate outputs).
+.
+.SH BUGS
+Working on recursive dependency download for hardware.
+.SH AUTHOR
+Alexander T Pastoriza
+.SH "SEE ALSO"
+.BR qms (1),
+.BR modclone (1)

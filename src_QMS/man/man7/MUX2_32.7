@@ -1,0 +1,37 @@
+.TH MUX2_32 7 "October 2020" Linux "FIUCIS-CDA Hardware Manual"
+.SH MODULE NAME
+MUX2_32
+.SH DEPENDENCIES
+.I
+MUX2
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+S;1
+A;32
+B;32
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;32
+.TE
+.SH DESCRIPTION
+Two-input multiplexor with 32-bit inputs.  Sets output Y equal to:
+.sp
+A if S = 0,
+.sp
+B if S = 1.
+.
+.SH BUGS
+Working on recursive dependency download for hardware.
+.SH AUTHOR
+Alexander T Pastoriza
+.SH "SEE ALSO"
+.BR qms (1),
+.BR modclone (1)

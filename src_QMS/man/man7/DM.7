@@ -1,0 +1,34 @@
+.TH DM 7 "October 2020" Linux "FIUCIS-CDA Hardware Manual"
+.SH MODULE NAME
+DM
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+a;32
+wd;32
+we;1
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+rd;32
+.TE
+.SH DESCRIPTION
+Random access data memory. rd = contents os address a.  Value at address a is
+set to wd if we is equal to 1.
+.
+.SH BUGS
+Working on recursive dependency download for hardware.
+.SH AUTHOR
+Alexander T Pastoriza
+.SH "SEE ALSO"
+.BR qms (1),
+.BR modclone (1)

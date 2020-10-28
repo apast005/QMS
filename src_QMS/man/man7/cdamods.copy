@@ -40,8 +40,9 @@ Name;Size(Bits)
 clk;1
 reset;1
 .TE
+.
 .SH OUTPUTS
-.B None
+None
 .SH DESCRIPTION
 .B CPU_SingleCycle
 Single-cycle MIPS CPU

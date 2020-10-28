@@ -1,0 +1,34 @@
+.TH SPLICE_PCJ 7 "October 2020" Linux "FIUCIS-CDA Hardware Manual"
+.SH MODULE NAME
+SPLICE_PCJ
+.SH DEPENDENCIES
+.I
+SameBit
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+ir25_0;26
+pc31_28;4
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;32
+.TE
+.SH DESCRIPTION
+Splices together, in the following order: pc31_28, followed by ir25_0,
+followed by two zeroes.  Useful for computing the target of a MIPS
+jump instruction.
+.
+.SH BUGS
+Working on recursive dependency download for hardware.
+.SH AUTHOR
+Alexander T Pastoriza
+.SH "SEE ALSO"
+.BR qms (1),
+.BR modclone (1)

@@ -1,0 +1,55 @@
+.TH QMS 1 "October 2020" Linux "Quartus and ModelSim Modules"
+.SH NAME
+QMS
+.SH SYNOPSIS
+Will add when QMS command is created for terminal menu and script integration
+.SH DESCRIPTION
+The QMS library of scripts is intended to automate the process when using
+.B Quartus
+or
+.B ModelSim
+.
+These scripts are all integrated through a terminal command window which
+contains all available functions that anyone may use.  Dependencies are
+automatically downloaded along with the originally cloned Hardware module.
+.SH OPTIONS
+None as of yet.
+.SH FILES
+.B Manually selected tasks
+.sp
+- Clone hardware from FIUCIS-CDA GitHub
+.sp
+- Refresh list of currently available FIUCIS-CDA repositories
+.sp
+- (More to add later)
+.sp
+.B Automated tasks
+.sp
+- Dependencies of cloned hardware module
+.sp
+- Runs testbench.v of each downloaded module to ensure it is functioning
+properly
+.sp
+- (More to add later)
+.SH ENVIRONMENT
+Will add at release
+.SH DIAGNOSTICS
+Most likely the common error will be related to the set path environment when
+trying to run
+.B Quartus
+or
+.B ModelSim
+specific commands.  These will be displayed as an error message that will
+provide details on which environment path is missing and how to set it.
+Will also update this section at release.
+.SH BUGS
+Working on the project as a whole.  Many features are complete, however,
+the finalized product will not be set for release until the end of
+November.  For specific information on hardware modules available to clone
+from FIUCIS-CDA GitHub, please use 'man [Hardware_Name]' without the
+brackets to lookup specific information.
+.SH AUTHOR
+Alexander T Pastoriza
+.SH "SEE ALSO"
+.BR 'Hardware_Repo_Name' (7),
+.BR modclone (1)

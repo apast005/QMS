@@ -1,0 +1,39 @@
+.TH CTRL 7 "October 2020" Linux "FIUCIS-CDA Hardware Manual"
+.SH MODULE NAME
+CTRL
+.SH DEPENDENCIES
+.I
+SameBit
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+eq;1
+ir31_26;6
+ir5_0;6
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+rf_we;1
+add2_s;1
+rf_wd_s;1
+dm_we;1
+rf_wa_s;1
+alu_op;5
+pc_s;2
+.TE
+.SH DESCRIPTION
+Single cycle MIPS control unit.
+.
+.SH BUGS
+Working on recursive dependency download for hardware.
+.SH AUTHOR
+Alexander T Pastoriza
+.SH "SEE ALSO"
+.BR qms (1),
+.BR modclone (1)

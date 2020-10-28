@@ -1,0 +1,57 @@
+.TH ALU32 7 "October 2020" Linux "FIUCIS-CDA Hardware Manual"
+.SH MODULE NAME
+ALU32
+.SH DEPENDENCIES
+.I
+MUX2,
+MUX4,
+SameBit,
+OneBitAdder
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;32
+alu_op;5
+B;32
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Result;32
+.TE
+.SH DESCRIPTION
+Computes A op B, where A and B are 32-bit values and 'op' depends on the value of
+alu_op(see below). Stores result in a 32-bit value Result.
+.
+alu_op is a five bit value, consisting of the following bits in order:
+.B Ainvert,
+.B Binvert,
+.B CarryIn,
+.B Op1,
+.B Op0.
+The following operations are supported:
+.TS
+tab(;) allbox;
+c;c;c;c;c;c.
+Ainvert;Binvert;CarryIn;Op1;Op0;Result
+0;0;0;0;0;A & B
+0;0;0;0;1;A | B
+0;0;0;1;0;A + B
+0;1;1;1;0;A - B
+0;1;1;1;1;A < B
+1;1;0;0;1;!(A & B)
+1;1;0;0;0;!(A | B)
+.TE
+.
+.SH BUGS
+Working on recursive dependency download for hardware.
+.SH AUTHOR
+Alexander T Pastoriza
+.SH "SEE ALSO"
+.BR qms (1),
+.BR modclone (1)

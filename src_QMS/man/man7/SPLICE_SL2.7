@@ -1,0 +1,32 @@
+.TH SPLICE_SL2 7 "October 2020" Linux "FIUCIS-CDA Hardware Manual"
+.SH MODULE NAME
+SPLICE_SL2
+.SH DEPENDENCIES
+.I
+SameBit
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;16
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;18
+.TE
+.SH DESCRIPTION
+Shifts a 16-bit input A left by two slots, producing an 18-bit output
+Y = A * 4.
+.
+.SH BUGS
+Working on recursive dependency download for hardware.
+.SH AUTHOR
+Alexander T Pastoriza
+.SH "SEE ALSO"
+.BR qms (1),
+.BR modclone (1)

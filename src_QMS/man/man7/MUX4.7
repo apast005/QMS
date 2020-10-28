@@ -1,0 +1,43 @@
+.TH MUX4 7 "October 2020" Linux "FIUCIS-CDA Hardware Manual"
+.SH MODULE NAME
+MUX4
+.SH DEPENDENCIES
+.I
+None
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+A;1
+B;1
+C;1
+D;1
+S;2
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+Y;1
+.TE
+.SH DESCRIPTION
+Four-input multiplexor with one-bit inputs.  Sets output Y equal to:
+.sp
+A if S = 00,
+.sp
+B if S = 01,
+.sp
+C if S = 10,
+.sp
+D if S = 11.
+.
+.SH BUGS
+Working on recursive dependency download for hardware.
+.SH AUTHOR
+Alexander T Pastoriza
+.SH "SEE ALSO"
+.BR qms (1),
+.BR modclone (1)

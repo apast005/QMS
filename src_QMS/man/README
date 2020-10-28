@@ -23,7 +23,5 @@ groff -man -Tascii -tbl cdamods.7.gz
 9
     Kernel internals.
 
-## List of Modules that need to be added to CDAMODS man page ##
-
 CPU_Pipelined
-  > No pdf in repository.  Make one?
+  > No pdf in repository.
