@@ -1,0 +1,51 @@
+.TH RF 7 "October 2020" Linux "FIUCIS-CDA Hardware Manual"
+.SH MODULE NAME
+RF
+.SH DEPENDENCIES
+.I
+Flopenr_32,
+Flopenr,
+DSwitch,
+MUX32_32,
+MUX32,
+Decoder_32
+.
+.SH INPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+clk;1
+reset;1
+we;1
+r1a;5
+r2a;5
+wa;5
+wd;32
+.TE
+.SH OUTPUTS
+.TS
+tab(;) allbox;
+c;c.
+Name;Size(Bits)
+r1d;32
+r2d;32
+.TE
+.SH DESCRIPTION
+.sp
+MIPS register file, containing all 32-bit MIPS registers
+.sp
+When reset = 1, all registers are set to zero
+.sp
+Otherwise:
+  -r1d is set to the contents of register #r1a
+  -r2d is set to the contents of register #r2a
+  -if (we == 1), set register #wa equal to wd
+.
+.SH BUGS
+Working on recursive dependency download for hardware.
+.SH AUTHOR
+Alexander T Pastoriza
+.SH "SEE ALSO"
+.BR qms (1),
+.BR modclone (1)

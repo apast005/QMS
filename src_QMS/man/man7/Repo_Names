@@ -1,7 +1,5 @@
 Adder_32
 ALU32
-ALUBit31
-ALUBits0To30
 CPU_MultiCycle
 CPU_Pipelined
 CPU_SingleCycle
