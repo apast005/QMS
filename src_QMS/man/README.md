@@ -1,7 +1,6 @@
 Adder_32(7)               FIUCIS-CDA Hardware Manual               Adder_32(7)
 
-<!-- MODULE NAME -->
-## MODULE NAME
+# MODULE NAME
        Adder_32
 
 ## DEPENDENCIES
@@ -10,15 +9,15 @@ Adder_32(7)               FIUCIS-CDA Hardware Manual               Adder_32(7)
 ## INPUTS
 
         Name | Size(Bits)
-        -----------------
+        ---------|---------
         A   |     32    
         B   |     32
 
 ## OUTPUTS
 
         Name | Size(Bits)
-        -----------------
-        S | 32
+        ---------|---------
+        S   |     32
 
 ## DESCRIPTION
        Computes  A  +  B,  where  A and B are 32-bit values.  Stores result in
