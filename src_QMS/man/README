@@ -1,27 +1,38 @@
-command to process man page
-groff -man -Tascii -tbl cdamods.7.gz
+Adder_32(7)               FIUCIS-CDA Hardware Manual               Adder_32(7)
 
-## Man directory descriptions
-1
-    General commands (tools and utilities).
-2
-    System calls and error numbers.
-3
-    Library functions.
-3p
-    perl(1) programmer's reference guide.
-4
-    Device drivers.
-5
-    File formats.
-6
-    Games.
-7
-    Miscellaneous information.
-8
-    System maintenance and operation commands.
-9
-    Kernel internals.
 
-CPU_Pipelined
-  > No pdf in repository.
+## MODULE NAME
+       Adder_32
+
+## DEPENDENCIES
+       OneBitAdder
+
+## INPUTS
+
+        Name | Size(Bits)
+        -----------------
+        A   |     32    
+        B   |     32
+
+## OUTPUTS
+
+        Name | Size(Bits)
+        -----------------
+        S | 32
+
+## DESCRIPTION
+       Computes  A  +  B,  where  A and B are 32-bit values.  Stores result in
+       32-bit value S.
+
+## BUGS
+       Working on recursive dependency download for hardware.
+
+## AUTHOR
+       Alexander T Pastoriza
+
+## SEE ALSO
+       qms(1), modclone(1)
+
+
+
+Linux                            October 2020                      Adder_32(7)
