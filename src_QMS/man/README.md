@@ -7,15 +7,15 @@ Adder_32(7)               FIUCIS-CDA Hardware Manual               Adder_32(7)
        OneBitAdder
 
 ## INPUTS
-First Header | Second Header
+Name | Size(Bits)
 ------------ | -------------
-Content cell 1 | Content cell 2
-Content column 1 | Content column 2
+A | 32
+B | 32
 
-        Name | Size(Bits)
-        ---------|---------
-        A   |     32    
-        B   |     32
+Name | Size(Bits)
+---------|---------
+A   |     32    
+B   |     32
 
 ## OUTPUTS
 
