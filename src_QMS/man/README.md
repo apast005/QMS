@@ -1,5 +1,3 @@
-Adder_32(7)               FIUCIS-CDA Hardware Manual               Adder_32(7)
-
 #### MODULE NAME
        Adder_32
 
@@ -32,6 +30,3 @@ S   |     32
 ## SEE ALSO
        qms(1), modclone(1)
 
-
-
-Linux                            October 2020                      Adder_32(7)
