@@ -1,7 +1,7 @@
 Adder_32(7)               FIUCIS-CDA Hardware Manual               Adder_32(7)
 
-
-##MODULE NAME
+<!-- MODULE NAME -->
+## MODULE NAME
        Adder_32
 
 ## DEPENDENCIES
