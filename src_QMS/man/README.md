@@ -1,12 +1,16 @@
 Adder_32(7)               FIUCIS-CDA Hardware Manual               Adder_32(7)
 
-# MODULE NAME
+#### MODULE NAME
        Adder_32
 
 ## DEPENDENCIES
        OneBitAdder
 
 ## INPUTS
+First Header | Second Header
+------------ | -------------
+Content cell 1 | Content cell 2
+Content column 1 | Content column 2
 
         Name | Size(Bits)
         ---------|---------
