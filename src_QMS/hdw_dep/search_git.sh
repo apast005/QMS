@@ -39,7 +39,7 @@ echo "Required dependencies for hardware will also be installed."
 read -p "Enter exact name of hardware repository: > " hardware_repo
 
 # Clone desired repository FIXME to multiple repositories later
-git clone "https://github.com/FIUSCIS-CDA/$hardware_repo.git"
+git clone "https://github.com/FIUSCIS-CDA/$hardware_repo.git" .
 
 ## Below is a custom solution to extract strings from QSF file to be
 ## used as variables in git clone command to download required dependencies
@@ -64,7 +64,7 @@ while IFS= read -r dependencies; do
 	echo -n "Dependency currently cloning: $dependencies"
 	 #FIXME add user confirmation to proceed and warning if no
 	 #Clone necessary dependencies
-	git clone "https://github.com/FIUSCIS-CDA/$dependencies.git"
+	git clone "https://github.com/FIUSCIS-CDA/$dependencies.git" .
 done < tmp.txt
 
 ## TODO: Go over each cloned hardware dependency to download their dependencies
