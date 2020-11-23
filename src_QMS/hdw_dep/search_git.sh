@@ -66,6 +66,3 @@ while IFS= read -r dependencies; do
 	 #Clone necessary dependencies
 	git clone "https://github.com/FIUSCIS-CDA/$dependencies.git" .
 done < tmp.txt
-
-## TODO: Go over each cloned hardware dependency to download their dependencies
-## Thinking of organizing each task into seperate functions to be called recursively
