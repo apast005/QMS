@@ -77,13 +77,6 @@ and create polished shell scripts for anyone to use.
 
 Most of the README will be updated as the project progresses.  The majority is
 still in a template format derived from [this github.](https://github.com/othneildrew/Best-README-Template/blob/master/BLANK_README.md)
-### Built With
-
-* []()
-* []()
-* []()
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -92,22 +85,46 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-TODO: Adding prerequisites here at a later date.  Below is a template
-* npm
+Preparation for running ModelSim
+* 32bit libraries to install
 ```sh
-npm install npm@latest -g
+sudo dpkg --add-architecture i386
+```
+```sh
+sudo apt-get update
+```
+```sh
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
+```
+```sh
+sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0
+```
+```sh
+sudo apt-get install build-essential
+```
+```sh
+sudo apt-get install gcc-multilib g++-multilib lib32stdc++6 lib32gcc1 \
+
+expat:i386 fontconfig:i386 libfreetype6:i386 libexpat1:i386 libgtk-3-0:i386 \
+
+libcanberra0:i386 libice6:i386 libsm6:i386 zlib1g:i386 libx11-6:i386 \
+
+libxau6:i386 libxdmcp6:i386 libxext6:i386 libxft2:i386 libxrender1:i386 \
+
+libxt6:i386 libxtst6:i386
 ```
 
 ### Installation
 
-1. Clone the repo
+1. Install git
+```sh
+sudo apt install git
+```
+2. Clone the repo
 ```sh
 git clone https://github.com/apast005/QMS.git
 ```
-2. Install NPM packages
-```sh
-npm install
-```
+
 
 
 
@@ -124,13 +141,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 1. Increase Usability      
     - [X] Download the appropriate components from GitHub and produce useful messages and/or log files for users as appropriate.  
-    - [ ] Outputs of these test benches also should be displayed in the terminal or into log files in ways that make sense
+    - [X] Outputs of these test benches also should be displayed in the terminal or into log files in ways that make sense
     - [ ] A user should be able to turn interactive mode on or off (for
               * Example:  Windows users executing these test benches over Putty
 
 2. Automate component integration/testing
     - [X] Automate this process through scripts that could process these dependency files and check if dependencies have been installed
-    - [ ] Test benches for components should be automatically executed upon installation to validate a working component.
+    - [X] Test benches for components should be automatically executed upon installation to validate a working component.
 
 3. Documentation is in PDF table that specifies the module name, dependencies, inputs, outputs, and an English description of the component.  
     - [X] Alternative environment for documentation like Unix “man” pages.
@@ -180,7 +197,7 @@ Project Link: [https://github.com/apast005/QMS](https://github.com/apast005/QMS)
 * [Quartus Manual](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/quartus_install.pdf)
 * [Intel Installation FAQS](https://www.intel.com/content/www/us/en/programmable/downloads/software/faq/installation-faq.html?erpm_id=8905536_ts1601556901225#_Toc361418227)
 * [Intel's Download Center](https://fpgasoftware.intel.com/20.1/?edition=lite)
-* []()
+* [Intel's Terminal Guide](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/tclscriptrefmnl.pdf)
 
 
 
@@ -188,7 +205,7 @@ Project Link: [https://github.com/apast005/QMS](https://github.com/apast005/QMS)
 ## Acknowledgments
 * [Template for README](https://github.com/othneildrew/Best-README-Template/blob/master/BLANK_README.md)
 * [Jens Schweikhardt How To](https://tldp.org/HOWTO/Man-Page/q3.html)
-* []()
+* [Troubleshooting Guide ModelSim](https://profile.iiita.ac.in/bibhas.ghoshal/COA_2020/Lab/ModelSim%20Linux%20installation.html)
 
 
 
