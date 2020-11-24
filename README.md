@@ -85,8 +85,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-Preparation for running ModelSim
-* 32bit libraries to install
+1. 32bit libraries to install
 ```sh
 sudo dpkg --add-architecture i386
 ```
@@ -113,10 +112,17 @@ libxau6:i386 libxdmcp6:i386 libxext6:i386 libxft2:i386 libxrender1:i386 \
 
 libxt6:i386 libxtst6:i386
 ```
+2. Go to [Quartus ModelSim download site](https://fpgasoftware.intel.com/20.1.1/?edition=lite&platform=linux)
+3. Select Edition: 'Lite'
+4. Select OS: 'Linux'
+5. Select 'Individual Files' tab and download Quartus and ModelSim .run files
 
 ### Installation
 
 1. Install git
+```sh
+sudo apt update && sudo apt upgrade
+```
 ```sh
 sudo apt install git
 ```
@@ -124,9 +130,33 @@ sudo apt install git
 ```sh
 git clone https://github.com/apast005/QMS.git
 ```
-
-
-
+3. [Download freetype](http://download.savannah.gnu.org/releases/freetype/freetype-2.4.12.tar.bz2)
+4. Extract freetype .tar.bz2 file
+5. Then run the following set of commands
+```sh
+cd  ~/Downloads/
+```
+```sh
+cd  freetype-2.4.12
+```
+```sh
+./configure -- build=i686-pc -linux-gnu "CFLAGS=-m32" "CXXFLAGS=-m32" "LDFLAGS=-m32"
+```
+```sh
+make -j8
+```
+6. Go to modelsim_ase directory. Below is where my modelsim_ase directory was located
+```sh
+cd ~/intelFPGA/20.1/modelsim_ase
+```
+7. Once there, make a lib32 directory
+```sh
+mkdir lib32
+```
+8. Copy files from freetype to new lib32 folder inside modelsim_ase
+```sh
+sudo cp ~/Downloads/freetype-2.4.12/objs/.libs/libfreetype.so* ./lib32
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
