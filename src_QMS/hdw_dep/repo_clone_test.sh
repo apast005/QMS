@@ -25,8 +25,35 @@ validate_module() {
 	cd ..
 }
 
-# Confirm to proceed
-if whiptail --yesno "Check/Install git and download repository?" 20 60; then
+# Retrieve dependencies from recently cloned repository
+clone_dependencies() {
+  cd $1
+  awk -F/ '{print $3}' "$1.qsf" > tmp.txt
+  grep -e ".*\.bdf" tmp.txt > tmp1.txt
+  sed 's/.bdf//g' tmp1.txt > tmp.txt
+
+  # Read tmp.txt using each line as a parameter in git clone
+  while IFS= read -r dependencies; do
+  	echo -n "Dependency currently cloning: $dependencies"
+  	 #FIXME add user confirmation to proceed and warning if no
+  	 #Clone necessary dependencies
+  	git clone "https://github.com/FIUSCIS-CDA/$dependencies.git"
+  	#validate_module $dependencies
+    cd $dependencies
+    mv * ..
+    cd ..
+    echo "Deleting $dependencies folder"
+    rm -r $dependencies
+  done < tmp.txt
+
+  # Clean temp files
+  rm tmp1.txt tmp.txt
+}
+
+
+
+# Validate git is installed on system
+if whiptail --yesno "Check/Install git?" 20 60; then
 	# Prepare Basics
 	sudo apt update -y
 	sudo apt upgrade -y
@@ -40,8 +67,8 @@ if whiptail --yesno "Check/Install git and download repository?" 20 60; then
 		echo "COMMAND found!"
 	fi
 else
-	echo "Process declined, now exiting.."
-	exit 1
+	echo "Git check declined"
+  echo ""
 fi
 
 # Selection Menu for cloning repositories
@@ -65,30 +92,9 @@ select hardware_repo in "${repo_array[@]}" "Exiting the script"; do
       echo "$hardware_repo repository was selected"
 			# Cloning Repository
 			git clone "https://github.com/FIUSCIS-CDA/$hardware_repo.git"
+      clone_dependencies $hardware_repo
+      wait
 			validate_module $hardware_repo
       ;;
   esac
 done
-
-# Retrieve dependencies from recently cloned repository
-cd $hardware_repo
-awk -F/ '{print $3}' "$hardware_repo.qsf" > tmp.txt
-grep -e ".*\.bdf" tmp.txt > tmp1.txt
-sed 's/.bdf//g' tmp1.txt > tmp.txt
-
-# Read tmp.txt using each line as a parameter in git clone
-while IFS= read -r dependencies; do
-	echo -n "Dependency currently cloning: $dependencies"
-	 #FIXME add user confirmation to proceed and warning if no
-	 #Clone necessary dependencies
-	git clone "https://github.com/FIUSCIS-CDA/$dependencies.git"
-	validate_module $dependencies
-  cd $dependencies
-  mv * ..
-  cd ..
-  echo "Deleting $dependencies folder"
-  rm -r $dependencies
-done < tmp.txt
-
-# Clean temp files
-rm tmp1.txt tmp.txt
