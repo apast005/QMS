@@ -37,15 +37,13 @@ select hardware_repo in "${repo_array[@]}" "Exiting the script"; do
       echo "$hardware_repo repository was selected"
 			# Cloning Repository
 			git clone "https://github.com/FIUSCIS-CDA/$hardware_repo.git"
-      #validate_module $hardware_repo
+      validate_module $hardware_repo
       break
       ;;
   esac
 done
 
 # Retrieve dependencies from recently cloned repository
-git init $hardware_repo
-wait
 cd $hardware_repo
 awk -F/ '{print $3}' "$hardware_repo.qsf" > tmp.txt
 grep -e ".*\.bdf" tmp.txt > tmp1.txt
@@ -63,15 +61,11 @@ while IFS= read -r dependencies; do
   cd ..
   echo "Deleting $dependencies folder"
   rm -r $dependencies
-	#validate_module $dependencies
+	validate_module $dependencies
 done < tmp.txt
+
+
+validate_module $dependencies
 
 # Clean temp files
 rm tmp1.txt tmp.txt
-
-
-#cd $hardware_repo
-#git remote add origin <url>
-#git config core.sparsecheckout true
-#echo "finisht/*" >> .git/info/sparse-checkout
-#git pull --depth=1 origin master
