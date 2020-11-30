@@ -1,49 +1,84 @@
-.TH RF 7 "October 2020" Linux "FIUCIS-CDA Hardware Manual"
+.TH HardwareAssembler 7 "October 2020" Linux "FIUCIS-CDA Hardware Manual"
 .SH MODULE NAME
-RF
+HardwareAssembler
 .SH DEPENDENCIES
 .I
-Flopenr_32,
-Flopenr,
-DSwitch,
-MUX32_32,
-MUX32,
-Decoder_32
+ALU32,
+ALUBit31,
+ALUBits0To30,
+ALUCtl,
+FSM,
+INC4,
+maindec,
+memfile.dat,
+microprogram,
+mipsmem,
+mipsmulti,
+mipsparts,
+mipstest,
+MUX2,
+MUX4,
+NS0, 
+NS1,
+NS2,
+NS3,
+OneBitAdder,
+OverflowDetection,
+topmulti
 .
-.SH INPUTS
-.TS
-tab(;) allbox;
-c;c.
-Name;Size(Bits)
-clk;1
-reset;1
-we;1
-r1a;5
-r2a;5
-wa;5
-wd;32
-.TE
-.SH OUTPUTS
-.TS
-tab(;) allbox;
-c;c.
-Name;Size(Bits)
-r1d;32
-r2d;32
-.TE
 .SH DESCRIPTION
-.sp
-MIPS register file, containing all 32-bit MIPS registers
-.sp
-When reset = 1, all registers are set to zero
-.sp
-Otherwise:
-  -r1d is set to the contents of register #r1a
-  -r2d is set to the contents of register #r2a
-  -if (we == 1), set register #wa equal to wd
+      Hardware Assembler is intended to familiarize the use of ModelSim and
+      Quartus through the command line.  The section 'GETTING STARTED' is where
+      the command line instructions for operation begins. The basic commands
+      used to run thetestbench for Hardware Assembler are:
+
+1. vlib sets up a work directory in the root folder of Hardware Assembler
+```sh
+vlib work
+```
+2. quartus_map will convert necessary .bdf files into verilog (.v) to prepare
+HardwareAssembler to be compiled and simulated
+```sh
+quartus_map --read_settings_files=on --write_settings_files=off \
+[FileName] -c [FileName] --convert_bdf_to_verilog=[FileName].bdf
+```
+3. vlog compiles all verilog files (*.v) in the current working directory.  vlog
+also creates the work directory if 'vlib work' was not run.
+```sh
+vlog *.v
+```
+4. After successfully compiling all verilog files, the below command will run
+HardwareAssembler's testbench for 360 time units using a clock that starts on
+the rising edge (1 0) with a period of 5 (-r 5).
+```sh
+vsim -c -do "force -freeze sim:/testbench/clk 1 0, 0 {2 ps} -r 5; run 360; quit" testbench
+```
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
+.SH GETTING STARTED
+1. Move all .bdf files inside of the directory 'example' into the parent directory
+'HardwareAssembler'.
+```sh
+mv *.bdf ..
+```
+2. Compile all .bdf files into verilog files
+```sh
+for i in *.bdf
+do
+  quartus_map --read_settings_files=on --write_settings_files=off $i -c $i --convert_bdf_to_verilog=$i.bdf
+done
+```
+3. Compile all verilog files in the directory HardwareAssembler
+```sh
+for i in *.v
+do
+   vlog $i
+done
+```
+4. Run testbench
+```sh
+vsim -c -do "force -freeze sim:/testbench/clk 1 0, 0 {2 ps} -r 5; run 360; quit" testbench
+```
+.
 .SH AUTHOR
 Alexander T Pastoriza
 .SH "SEE ALSO"
