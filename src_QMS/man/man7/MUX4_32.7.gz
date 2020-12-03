@@ -2,7 +2,6 @@
 .SH MODULE NAME
 MUX4_32
 .SH DEPENDENCIES
-.I
 MUX4
 .
 .SH INPUTS
@@ -34,10 +33,10 @@ C if S = 10
 .sp
 D if S = 11
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

@@ -2,7 +2,6 @@
 .SH MODULE NAME
 Decoder_32
 .SH DEPENDENCIES
-.I
 None
 .
 .SH INPUTS
@@ -54,10 +53,10 @@ Q31;1
 Takes a 5-bit input A (unsigned from 0 to 31).  Set the appropriate Q bit
 (0 to 31) to 1.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

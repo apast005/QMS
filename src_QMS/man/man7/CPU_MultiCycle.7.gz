@@ -2,7 +2,6 @@
 .SH MODULE NAME
 CPU_MultiCycle
 .SH DEPENDENCIES
-.I
 SameBit,
 MUX2,
 Flopr_32,
@@ -40,6 +39,7 @@ clk;1
 reset;1
 .TE
 .SH OUTPUTS
+None
 .SH DESCRIPTION
 Multi-Cycle MIPS CPU
 .sp
@@ -47,10 +47,10 @@ CTRL operates with an FSM that includes a four-bit state (bits NS3, NS2, NS1
 and NS0) and micro-instructions implemented in a MicroROM.  Mapping from ALUOp
 bits to ALU inputs is done by ALUCtl.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

@@ -2,7 +2,6 @@
 .SH MODULE NAME
 DSwitch
 .SH DEPENDENCIES
-.I
 None
 .
 .SH INPUTS
@@ -24,10 +23,10 @@ Q;1
 .SH DESCRIPTION
 A one-bit switch.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

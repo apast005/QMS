@@ -2,7 +2,6 @@
 .SH MODULE NAME
 ALU32
 .SH DEPENDENCIES
-.I
 MUX2,
 MUX4,
 SameBit,
@@ -48,10 +47,10 @@ Ainvert;Binvert;CarryIn;Op1;Op0;Result
 1;1;0;0;0;!(A | B)
 .TE
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

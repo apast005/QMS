@@ -2,7 +2,6 @@
 .SH MODULE NAME
 SPLICE_SL2
 .SH DEPENDENCIES
-.I
 SameBit
 .
 .SH INPUTS
@@ -23,10 +22,10 @@ Y;18
 Shifts a 16-bit input A left by two slots, producing an 18-bit output
 Y = A * 4.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

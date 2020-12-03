@@ -47,10 +47,10 @@ None
 .B CPU_SingleCycle
 Single-cycle MIPS CPU
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

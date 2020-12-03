@@ -2,7 +2,6 @@
 .SH MODULE NAME
 Flopenr
 .SH DEPENDENCIES
-.I
 DESwitch,
 DSwitch
 .
@@ -27,10 +26,10 @@ Q;1
 A one-bit enabled register, implemented with two switches (one unenabled, one
 enabled)
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

@@ -2,7 +2,6 @@
 .SH MODULE NAME
 OneBitAdder
 .SH DEPENDENCIES
-.I
 None
 .
 .SH INPUTS
@@ -26,10 +25,10 @@ S;1
 Computes Ci + A + B.  Stores two-bit result in Co and S;  Co is the first bit
 and S is the second.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

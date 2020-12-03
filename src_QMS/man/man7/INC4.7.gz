@@ -2,7 +2,6 @@
 .SH MODULE NAME
 INC4
 .SH DEPENDENCIES
-.I
 MUX4
 .
 .SH INPUTS
@@ -29,10 +28,10 @@ S[0];1
 Takes a 4-bit input A (bits are wired into separate inputs), and generates a
 four-bit output S = A + 1 (bits are wired into separate outputs).
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

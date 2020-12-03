@@ -2,7 +2,6 @@
 .SH MODULE NAME
 Flopr
 .SH DEPENDENCIES
-.I
 DSwitch
 .
 .SH INPUTS
@@ -24,10 +23,10 @@ Q;1
 .SH DESCRIPTION
 A one-bit register, implemented with two switches.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

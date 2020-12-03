@@ -2,7 +2,6 @@
 .SH MODULE NAME
 SL2_32
 .SH DEPENDENCIES
-.I
 SameBit
 .
 .SH INPUTS
@@ -23,10 +22,10 @@ Y;32
 Takes a 32-bit input A, and shifts it left by 2.
 Works for Two's Compliment values.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

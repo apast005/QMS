@@ -2,7 +2,6 @@
 .SH MODULE NAME
 INC4_32
 .SH DEPENDENCIES
-.I
 Adder_32,
 OneBitAdder
 .
@@ -23,10 +22,10 @@ S;32
 .SH DESCRIPTION
 Computes A + 4, where A is a 32-bit value.  Stores result in a 32-bit value S.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)
