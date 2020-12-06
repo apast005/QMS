@@ -42,12 +42,6 @@ or
 specific commands.  These will be displayed as an error message that will
 provide details on which environment path is missing and how to set it.
 Will also update this section at release.
-.SH BUGS
-Working on the project as a whole.  Many features are complete, however,
-the finalized product will not be set for release until the end of
-November.  For specific information on hardware modules available to clone
-from FIUCIS-CDA GitHub, please use 'man [Hardware_Name]' without the
-brackets to lookup specific information.
 .SH AUTHOR
 Alexander T Pastoriza
 .SH "SEE ALSO"
