@@ -2,7 +2,6 @@
 .SH MODULE NAME
 MUX2
 .SH DEPENDENCIES
-.I
 None
 .
 .SH INPUTS
@@ -28,10 +27,10 @@ A if S = 0,
 .sp
 B if S = 1.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

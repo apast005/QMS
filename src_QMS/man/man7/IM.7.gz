@@ -2,7 +2,6 @@
 .SH MODULE NAME
 IM
 .SH DEPENDENCIES
-.I
 None
 .
 .SH INPUTS
@@ -22,10 +21,10 @@ d;32
 .SH DESCRIPTION
 Read-only instruction memory. d = contents of address a.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

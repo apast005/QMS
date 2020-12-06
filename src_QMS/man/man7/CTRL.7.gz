@@ -2,7 +2,6 @@
 .SH MODULE NAME
 CTRL
 .SH DEPENDENCIES
-.I
 SameBit
 .
 .SH INPUTS
@@ -30,10 +29,10 @@ pc_s;2
 .SH DESCRIPTION
 Single cycle MIPS control unit.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

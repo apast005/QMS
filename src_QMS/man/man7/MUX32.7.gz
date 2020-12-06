@@ -2,7 +2,6 @@
 .SH MODULE NAME
 MUX32
 .SH DEPENDENCIES
-.I
 Decoder_32,
 MUX2
 .
@@ -56,10 +55,10 @@ Y;1
 32-input multiplexor with one-bit inputs.  S is a five-bit value (0 to 31).
 Output Y is set to input number designated by S (0 to 31).
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n 
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

@@ -2,7 +2,6 @@
 .SH MODULE NAME
 SPLICE_PCJ
 .SH DEPENDENCIES
-.I
 SameBit
 .
 .SH INPUTS
@@ -25,10 +24,10 @@ Splices together, in the following order: pc31_28, followed by ir25_0,
 followed by two zeroes.  Useful for computing the target of a MIPS
 jump instruction.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

@@ -2,7 +2,6 @@
 .SH MODULE NAME
 MUX3
 .SH DEPENDENCIES
-.I
 None
 .
 .SH INPUTS
@@ -31,10 +30,10 @@ B if S = 01,
 .sp
 C if S = 10.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

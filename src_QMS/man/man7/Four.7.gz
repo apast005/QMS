@@ -2,11 +2,10 @@
 .SH MODULE NAME
 Four
 .SH DEPENDENCIES
-.I
 None
 .
 .SH INPUTS
-.
+None
 .SH OUTPUTS
 .TS
 tab(;) allbox;
@@ -16,10 +15,10 @@ Y
 .SH DESCRIPTION
 Outputs Y = 4 (32 bits).
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

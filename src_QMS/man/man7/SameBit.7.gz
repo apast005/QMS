@@ -2,7 +2,6 @@
 .SH MODULE NAME
 SameBit
 .SH DEPENDENCIES
-.I
 None
 .
 .SH INPUTS
@@ -24,10 +23,10 @@ Takes a single-bit input A, and outputs the same bit into Y.
 This is useful in Quartus when you need two different names for the same wire,
 which is not allowed.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)

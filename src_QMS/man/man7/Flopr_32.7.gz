@@ -2,7 +2,6 @@
 .SH MODULE NAME
 Flopr_32
 .SH DEPENDENCIES
-.I
 Flopr,
 DSwitch
 .
@@ -25,10 +24,10 @@ Q;32
 .SH DESCRIPTION
 A 32-bit register.
 .
-.SH BUGS
-Working on recursive dependency download for hardware.
 .SH AUTHOR
 Alexander T Pastoriza
+\n
+Idiel E Guerra
 .SH "SEE ALSO"
 .BR qms (1),
 .BR modclone (1)
