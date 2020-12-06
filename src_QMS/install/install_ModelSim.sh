@@ -1,42 +1,11 @@
 #!/bin/bash
 
-#####################################################################
-#####################################################################
-# Dependencies/Install ModelSim
-# ModelSim
-# 20.1.0.711
-#####################################################################
-#####################################################################
-
 ## ModelSim Variables
 ModelSim_HTTP_Address="https://drive.google.com/file/d/1OfVe6VRaOwnobr5J6FU_TkvMHYKCybYt/view?usp=sharing"
 ModelSim_File_Name="ModelSimSetup-20.1.0.711-linux.run"
 
 
-# echo warning that GUI installer will occur after download
-    echo -e "\a GUI Installer will assist after accept.\n\n"
 
-if whiptail --yesno "Begin ModelSim Download?" 20 60 ;then
-    # Prepare Basics
-    sudo dpkg --add-architecture i386
-    sudo apt update -y
-    sudo apt upgrade -y
-
-    # Input is fed from ModSim_input file
-    sudo apt-get install -y < ModSim_input
-
-    # Download ModelSim
-    echo -e "\e[33mDownloading ModelSim	...\e[0m"
-    wget "$ModelSim_HTTP_Address" --progress=dot
-    echo -e "\e[32m[OK]ModelSim Installer Starting	 ...  \e[0m"
-
-    # Run the installer
-    ./ModelSimSetup-*-linux.run
-
-else
-    echo Exiting Terminal...
-    exit 1
-fi
 
     # Make VCO script writable
     chmod u+w ~/intelFPGA/*.*/modelsim_ase/vco
